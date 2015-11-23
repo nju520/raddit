@@ -31,6 +31,7 @@
 </h3>
 
 <div id="comments">
+<!-- 调用app/views/comments/_comment.html.erb 模版  -->
   <%= render :partial => @link.comments %>
 </div>
 <%= simple_form_for [@link, Comment.new]  do |f| %>

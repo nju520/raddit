@@ -16,7 +16,7 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    @link = current_user.links.build
+    @link = current_user.links.build # make sure only the current can create new link
   end
 
   # GET /links/1/edit
@@ -65,7 +65,7 @@ class LinksController < ApplicationController
 
   def upvote
     @link = Link.find(params[:id])
-    @link.upvote_by current_user
+    @link.upvote_by current_user # make sure only current can vote for the link
     redirect_to :back
   end
 
